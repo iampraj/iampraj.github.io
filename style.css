@@ -21,21 +21,37 @@ body {
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .navbar h1 {
     font-size: 1.5rem;
 }
 
+.navbar nav {
+    display: flex;
+    gap: 2rem;
+}
+
 .navbar nav a {
     color: white;
     text-decoration: none;
-    margin-left: 2rem;
     transition: color 0.3s;
+    font-size: 1rem;
 }
 
 .navbar nav a:hover {
     color: #3498db;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -44,6 +60,11 @@ body {
     color: white;
     padding: 6rem 2rem;
     text-align: center;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {
@@ -65,11 +86,16 @@ body {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .cta-button:hover {
     background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.cta-button:active {
+    transform: scale(0.95);
 }
 
 /* Sections */
@@ -104,6 +130,7 @@ section h3 {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     color: #2c3e50;
+    font-size: 0.9rem;
 }
 
 #contact a {
@@ -122,4 +149,152 @@ footer {
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets (iPad, small devices) */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar h1 {
+        font-size: 1.2rem;
+    }
+
+    .navbar nav {
+        gap: 1rem;
+    }
+
+    .navbar nav a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        padding: 4rem 1.5rem;
+        min-height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Sections adjustments */
+    section {
+        padding: 2rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile phones (small devices) */
+@media (max-width: 480px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 0.8rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .navbar h1 {
+        font-size: 1rem;
+        flex-basis: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar nav {
+        gap: 0.5rem;
+        flex-basis: 100%;
+        justify-content: space-around;
+    }
+
+    .navbar nav a {
+        font-size: 0.75rem;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        padding: 2rem 1rem;
+        min-height: 45vh;
+        justify-content: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Sections adjustments */
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    section h3 {
+        font-size: 1rem;
+    }
+
+    .skills ul {
+        gap: 0.5rem;
+    }
+
+    .skills li {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+    .navbar h1 {
+        font-size: 0.9rem;
+    }
+
+    .navbar nav a {
+        font-size: 0.65rem;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.1rem;
+    }
 }
